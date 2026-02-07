@@ -8,6 +8,8 @@ int main() {
   std::cout << std::unitbuf;
   std::cerr << std::unitbuf;
 
+  std::cout << "$ " << std::flush;
+
   std::string command;
   std::getline(std::cin, command);
 
