@@ -14,10 +14,10 @@ int main() {
   while(true){
       std::cout << "$ " << std::flush;
       std::getline(std::cin, command);
-      if(input.substr(0,5) == "echo "){
-        std::cout<<input.substr(5)<< std::endl;
+      if(command.substr(0,5) == "echo "){
+        std::cout<<command.substr(5)<< std::endl;
       }
-       std::cout <<command<<": command not found" << std::endl;
+       std::cout<<command<<": command not found" << std::endl;
 
   }
 }
