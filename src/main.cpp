@@ -14,8 +14,8 @@ int main() {
   while(true){
       std::cout << "$ " << std::flush;
       std::getline(std::cin, command);
-      if(command=="exit"){
-        break;
+      if(input.substr(0,5) == "echo "){
+        std::cout<<input.substr(5)<< std::endl;
       }
        std::cout <<command<<": command not found" << std::endl;
 
