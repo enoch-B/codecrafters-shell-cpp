@@ -10,7 +10,7 @@ int main() {
 
  
   std::string command;
-  std::String paramater;
+  std::String paramaters;
 
   while(true){
       std::cout << "$ " << std::flush;
