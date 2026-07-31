@@ -18,12 +18,16 @@ int main() {
         break;
       } else if(command.substr(0,5) == "echo "){
         std::cout<<command.substr(5)<< std::endl;
-      } else if(command == "echo" || command=="exit" || command == "type"){
-        std::cout<<command<<" is a shell builtin"<<std::endl;
-      }
+      }  else if (command == "type") {
+      if (parameters == "echo" || parameters == "exit" || parameters == "type")
+        std::cout << parameters << " is a shell builtin" << std::endl;
+      else
+        std::cout << parameters << ": not found" << std::endl;
+    } 
 
       else{
        std::cout <<command<<": command not found" << std::endl;
   }
 } 
 }
+
