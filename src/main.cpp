@@ -11,10 +11,16 @@ int main()
   std::string command;
   std::string parameters;
 
+    const size_t parametersIndex = command.find(' ') + 1;
+  if (parametersIndex != string::npos) {
+    parameters = command.substr(parametersIndex);
+  }
+
   while (true)
   {
     std::cout << "$ " << std::flush;
     std::getline(std::cin, command);
+    
     if (command == "exit")
     {
       break;
@@ -24,16 +30,12 @@ int main()
 
       std::cout << command.substr(5) << std::endl;
     }
-    else if (command.substr(0, 5)  == "type")
-    {
-      parameters=command.substr(5);
-
+    else if (command == "type") {
       if (parameters == "echo" || parameters == "exit" || parameters == "type")
         std::cout << parameters << " is a shell builtin" << std::endl;
       else
         std::cout << parameters << ": not found" << std::endl;
     }
-
     else
     {
       std::cout << command << ": command not found" << std::endl;
