@@ -24,9 +24,10 @@ int main()
 
       std::cout << command.substr(5) << std::endl;
     }
-    else if (command == "type")
+    else if (command.substr(0, 5)  == "type")
     {
-
+      paramaters=command.substr(5);
+      
       if (parameters == "echo" || parameters == "exit" || parameters == "type")
         std::cout << parameters << " is a shell builtin" << std::endl;
       else
