@@ -9,7 +9,7 @@ int main()
   std::cerr << std::unitbuf;
 
   std::string command;
-  std::String paramaters;
+  std::string paramaters;
 
   while (true)
   {
