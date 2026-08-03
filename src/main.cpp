@@ -12,37 +12,38 @@ int main()
   std::string parameters;
   string input;
 
-
   while (true)
   {
     std::cout << "$ " << std::flush;
-  getline(cin, input);
+    getline(cin, input);
 
-    string command = input.substr(0, input.find(' '));
-
-    const size_t parametersIndex = command.find(' ') + 1;
-  if (parametersIndex != string::npos) {
-    parameters = command.substr(parametersIndex);
-  }
+    size_t spacePos = input.find(' ');
+    if (spacePos != string::npos) {
+      command = input.substr(0, spacePos);
+      parameters = input.substr(spacePos + 1); 
+    } else {
+      command = input;
+      parameters = "";
+    }
 
     if (command == "exit")
     {
       break;
     }
-    else if (command.substr(0, 5) == "echo ")
+    else if (command == "echo")
     {
-
-      std::cout << command.substr(5) << std::endl;
+        cout << parameters << endl;
     }
-    else if (command == "type") {
+    else if (command == "type")
+    {
       if (parameters == "echo" || parameters == "exit" || parameters == "type")
-        std::cout << parameters << " is a shell builtin" << std::endl;
+        cout << parameters << " is a shell builtin" << endl;
       else
-        std::cout << parameters << ": not found" << std::endl;
+        cout << parameters << ": not found" << endl;
     }
     else
     {
-      std::cout << command << ": command not found" << std::endl;
+      cout << command << ": command not found" << endl;
     }
   }
 }
