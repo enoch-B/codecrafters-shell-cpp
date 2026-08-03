@@ -9,7 +9,7 @@ int main()
   std::cerr << std::unitbuf;
 
   std::string command;
-  std::string paramaters;
+  std::string parameters;
 
   while (true)
   {
@@ -26,8 +26,8 @@ int main()
     }
     else if (command.substr(0, 5)  == "type")
     {
-      paramaters=command.substr(5);
-      
+      parameters=command.substr(5);
+
       if (parameters == "echo" || parameters == "exit" || parameters == "type")
         std::cout << parameters << " is a shell builtin" << std::endl;
       else
