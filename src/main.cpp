@@ -10,17 +10,21 @@ int main()
 
   std::string command;
   std::string parameters;
+  string input;
+
+
+  while (true)
+  {
+    std::cout << "$ " << std::flush;
+  getline(cin, input);
+
+    string command = input.substr(0, input.find(' '));
 
     const size_t parametersIndex = command.find(' ') + 1;
   if (parametersIndex != string::npos) {
     parameters = command.substr(parametersIndex);
   }
 
-  while (true)
-  {
-    std::cout << "$ " << std::flush;
-    std::getline(std::cin, command);
-    
     if (command == "exit")
     {
       break;
